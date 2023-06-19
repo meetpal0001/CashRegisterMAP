@@ -7,9 +7,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class ProductAdapter extends ArrayAdapter<Product> {
+public class ProductAdapter extends ArrayAdapter<Product>{
 
     public ProductAdapter(Context context, List<Product> products) {
         super(context, 0, products);

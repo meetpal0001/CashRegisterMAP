@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buyButton, manageButton;
     private TextView txtProductName,txtProductQuantity, txtTotalPrice;
     private EditText editTextProductNumber;
-    private ProductAdapter adapter;
+    private static ProductAdapter adapter;
     public static List<Product> productList;
     int productQuantity;
     double productPrice;
@@ -180,11 +180,17 @@ public class MainActivity extends AppCompatActivity {
         manageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent= new Intent(MainActivity.this,ManagerActivity.class);
+                intent.putExtra("purchased",purchasedProducts);
+                startActivity(intent);
             }
         });
+
+
     }
 
-
+    public static void refresh() {
+        adapter.updateData();
+    };
 
 }
